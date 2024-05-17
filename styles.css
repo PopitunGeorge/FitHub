@@ -1,0 +1,1242 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-list {
+    list-style-type: none;
+}
+
+.nav-item {
+    display: inline;
+    margin-right: 20px;
+}
+
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #148a04; 
+}
+
+.hero-section {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f4f4f4;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.features-section {
+    padding: 50px 200px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #fff;
+    height: 500px;
+    padding-top: 20px;
+}
+
+.feature {
+    text-align: center;
+    max-width: 300px;
+}
+
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding-bottom: 20px;
+
+    bottom: 0; /* Poziționează footer-ul în partea de jos a ecranului */
+    width: 100%;
+    z-index: 0; /* Asigură că footer-ul este întotdeauna deasupra celorlalte elemente */
+
+
+}
+.header-icon {
+    border-radius: 200px; /* Rotunjirea colțurilor pictogramei */
+    height: 50px; /* Setează înălțimea pictogramei */
+    width: 55px; /* Setează lățimea pictogramei */
+    margin-right: 10px; /* Adaugă un spațiu între pictogramă și titlu */
+    background-color: #fff; /* Setează culoarea de fundal a pictogramei */
+    color: #333; /* Setează culoarea textului din pictogramă */
+     /* Permite alinierea textului în centrul pictogramei */
+    justify-content: center; /* Alignează textul în centrul pictogramei */
+    align-items: center; /* Alignează textul în centrul pictogramei */
+    margin-left: 10px;
+    margin-right: 10px;
+
+}
+.features-container {
+    display: flex;
+    justify-content: space-around; /* Distribuie pictogramele uniform pe pagină */
+}
+
+.feature:hover{
+    transform: scale(1.1); /* Mărește pictograma la 110% la trecerea mouse-ului peste ea */
+    transition: transform 0.3s ease; /* Adaugă o tranziție lină la mărirea pictogramei */
+    box-shadow : 0 0 10px rgba(0, 0, 0, 0);
+
+
+}
+
+.features-title{
+    padding-left: 700px;
+    display: flex;
+    justify-content: center;
+    text-shadow: 2px 2px 4px #000000;
+    align-items: center;
+    height: 50px; /* Setează înălțimea bannerului */
+    margin-top: 1px; /* Adaugă un spațiu deasupra bannerului */
+    padding-top: 1px; /* Adaugă un spațiu între conținut și marginea bannerului */
+}
+
+.scrisProduse{
+    display: flex;
+    justify-content: center;
+    text-shadow: 2px 2px 4px #000000;
+    align-items: center;
+    height: 500px; /* Setează înălțimea bannerului */
+    margin-top: 20px; /* Adaugă un spațiu deasupra bannerului */
+    padding-top: 20px; /* Adaugă un spațiu între conținut și marginea bannerului */
+}
+.feature-icon {
+    height: 300px; /* Setează înălțimea pictogramei la 100% */
+    width: 300px; /* Setează lățimea pictogramei la 100% */
+    margin-bottom: 20px; /* Adaugă un spațiu între pictogramă și text */
+    border-radius: 20px; /* Rotunjirea colțurilor pictogramei */
+    background-color: #333; /* Setează culoarea de fundal a pictogramei */
+    color: #fff; /* Setează culoarea textului din pictogramă */
+    display: flex; /* Permite alinierea textului în centrul pictogramei */
+    justify-content: center; /* Alignează textul în centrul pictogramei */
+    align-items: center; /* Alignează textul în centrul pictogramei */
+}
+
+.banner {
+    padding: top 20px;
+    position: relative;
+    width: 100%;
+    height: 600px;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    animation: slideShow 10s infinite;
+    opacity: 0;
+}
+
+.slide:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.slide:nth-child(2) {
+    animation-delay: 4s;
+}
+
+.slide:nth-child(3) {
+    animation-delay: 8s;
+}
+
+@keyframes slideShow {
+    0% { opacity: 0; }
+    8% { opacity: 1; }
+    33% { opacity: 1; }
+    41% { opacity: 0; }
+    100% { opacity: 0; }
+}
+#banner img {
+    max-width: 100%; /* Asigură că imaginea nu depășește lățimea bannerului */
+    height: auto; /* Menține proporțiile imaginii */
+}
+
+
+.nav-item {
+    position: relative; /* Permite poziționarea absolută a submeniului în raport cu acest element */
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    left: 0; /* Aliniază submeniul la stânga elementului părinte */
+    background-color: #333;
+    padding: 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.submenu a {
+    color: orange;
+    text-decoration: none;
+}
+
+.submenu a:hover {
+    color: #ff9900;
+}
+
+.nav-item:hover .submenu {
+    display: block;
+}
+
+/*Partea de produse*/
+
+.products-section {
+    padding: 20px;
+    background-color: #f8f8f8;
+}
+
+.products-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-bottom: 90px;
+}
+
+.product {
+    flex: 0 0 calc(33.3333% - 20px);
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.product-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.product-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.product-description {
+    font-size: 14px;
+}
+
+/*Partea de worout*/
+
+.plans-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.workout-plan {
+    width: 45%;
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.workout-plan img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ccc;
+}
+
+@media (max-width: 768px) {
+    .plans-container {
+        flex-direction: column;
+    }
+
+    .workout-plan {
+        width: 100%;
+    }
+}
+
+.workout-plan:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.plan-link {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.plan-link:hover {
+    background-color: #0056b3;
+}
+
+
+/*Partea de  cautare*/
+#scrisProduse{
+    display: flex;
+    justify-content: left;
+    text-shadow: 2px 2px 4px #000000;
+    align-items: center;
+    height: 30px; /* Setează înălțimea bannerului */
+    margin-top: 10px; /* Adaugă un spațiu deasupra bannerului */
+    padding-top: 20px; /* Adaugă un spațiu între conținut și marginea bannerului */
+    margin-bottom: 20px;
+}
+
+/* Stilizează formularul de căutare */
+.search-form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/* Stilizează câmpul de intrare al formularului de căutare */
+.search-form input[type="text"] {
+    margin-left: 90px;
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Stilizează butonul de căutare */
+.search-form button {
+    padding: 10px 20px;
+    margin-left: 3px;
+    border: none;
+    background-color: #5c6bc0;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-left: 10px;
+    margin-bottom: 15px;
+}
+
+/* Adaugă efect de hover pentru butonul de căutare */
+.search-form button:hover {
+    background-color: #3949ab;
+}
+
+/* Tabelul de exercitii */
+
+.workout-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.workout-table, .workout-table th, .workout-table td {
+    border: 1px solid #ddd;
+}
+
+.workout-table th, .workout-table td {
+    padding: 15px;
+    text-align: left;
+}
+
+.workout-table th {
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+.workout-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Partea de cont */
+/* User icon style */
+.user-icon {
+    width: 150px; /* Adjust size for better visibility */
+    height: 150px; /* Maintain aspect ratio */
+    border-radius: 50%; /* Circular shape */
+    display: block;
+    margin: 20px auto; /* Center the icon vertically and horizontally */
+}
+
+/* Form styling for better layout and visibility */
+/* User icon styling */
+.user-icon {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    display: block;
+    margin: 30px auto;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+.form-container {
+    width: 80%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+fieldset {
+    border: 1px solid #ccc;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+legend {
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
+    color: #666;
+}
+
+input[type="text"],
+input[type="tel"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+input[type="checkbox"] {
+    cursor: pointer;
+}
+
+
+button.cta-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button.cta-button:hover {
+    background-color: #444;
+}
+
+
+.profile-section {
+    display: flex;
+    align-items: start; /* Align items at the top */
+    justify-content: center; /* Center horizontally */
+    padding: 20px;
+    gap: 20px; /* Space between user icon and form */
+    flex-wrap: wrap; /* Wrap items responsively */
+}
+
+.user-profile {
+    flex-basis: 150px; /* Fixed size for the user icon container */
+    text-align: center; /* Center the image inside the div */
+}
+
+.cta-button2{
+    width: 70%;
+    padding: 12px;
+    color: grey;
+    background-color: #046815;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.cta-button3{
+    width: 50%;
+    padding: 12px;
+    color: grey;
+    background-color: #da2b18;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+/*Partea de beginer_workout*/
+
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Main section styling */
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.workout-title {
+    color: #333;
+    text-align: center;
+    font-size: 28px;
+}
+
+/* Styling for workout summary */
+.workout-summary {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #e9e9e9;
+    border-radius: 8px;
+    box-shadow: inset 0 0 10px #ccc;
+}
+
+.workout-summary h2, workout-summary h3 {
+    color: #ff9900;
+}
+
+.workout-summary p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.workout-summary a {
+    display: inline-block;
+    background-color: #ff9900;
+    color: #fff;
+    padding: 10px 20px;
+    margin: 10px 0;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.workout-summary a:hover {
+    background-color: #e68a00;
+}
+
+/* Styling for the list of exercises and tutorials */
+.workout-summary ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.workout-summary li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.workout-summary li::before {
+    content: '✓';
+    color: #ff9900;
+    font-size: 16px;
+    position: absolute;
+    left: 0;
+}
+
+.workout-summary li a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.workout-summary li a:hover {
+    text-decoration: underline;
+}
+#h3Workout{
+    text-align: center;
+    
+    color: #120e0e;
+    font-size: 28px;
+    margin-top: 20px;
+}
+/*PRET SI ADAUGARE IN COS*/
+
+/* styles.css */
+
+/* Price styling */
+.pret {
+    font-size: 16px;
+    color: #e74c3c; /* Red color for the price */
+    margin: 5px 0;
+}
+
+/* Add to Cart button styling */
+.add-to-cart {
+    padding: 10px 20px;
+    background-color: #28a745; /* Green background color */
+    color: #fff; /* White text color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.add-to-cart:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+.drop-filter {
+    padding: 10px 20px;
+    background-color: #ff6347; /* Tomato background color */
+    color: #fff; /* White text color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.drop-filter:hover {
+    background-color: #ff4500; /* Darker tomato on hover */
+}
+.Partea_De_sus{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+}
+.hero-description{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    size: 20px;
+    background-color: #333;
+    color: #218838;
+    
+}
+.hero-title{
+    font-size: 2em;
+    margin: 0;
+    font-style: italic;
+}
+
+.search-button1{
+    padding: 10px 20px;
+    background-color: #218838;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 6px;
+    margin-left: 10px;
+    border: #000000;
+    border-width: 10px;
+    margin-bottom: 15px;
+}
+.search-button1:hover {
+    background-color: #036017;
+}
+.search-form2{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+
+/*Partea de contact*/
+
+/* styles.css */
+
+/* Reset some default styles */
+body, h1, h2, h3, p, ul {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header styling */
+.header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.header-icon {
+    height: 50px;
+    vertical-align: middle;
+}
+
+.header-title {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 10px;
+    font-size: 24px;
+}
+
+.nav {
+    margin-top: 10px;
+}
+
+.nav-list {
+    list-style: none;
+    padding: 0;
+}
+
+.nav-item {
+    display: inline;
+}
+
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+}
+
+.nav-link:hover {
+    background-color: #575757;
+    border-radius: 5px;
+}
+
+/* Contact section styling */
+.contact-section {
+    padding: 20px;
+    background-color: #fff;
+    margin: 20px auto;
+    max-width: 800px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.contact-title {
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+
+.contact-details {
+    line-height: 1.8;
+}
+
+.contact-details h3 {
+    margin-top: 20px;
+    color: #555;
+}
+
+.contact-details p, .contact-details a {
+    margin: 5px 0;
+}
+
+.contact-details a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.contact-details a:hover {
+    text-decoration: underline;
+}
+
+/* Footer styling */
+.footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+.footer-text {
+    margin: 0;
+}
+/* Produse */
+
+/* styles.css */
+
+body, h1, h2, h3, p, ul {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.header-icon {
+    height: 50px;
+    vertical-align: middle;
+}
+
+.header-title {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 10px;
+    font-size: 24px;
+}
+
+.nav {
+    margin-top: 10px;
+}
+
+.nav-list {
+    list-style: none;
+    padding: 0;
+}
+
+.nav-item {
+    display: inline;
+}
+
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+}
+
+.nav-link:hover {
+    background-color: #575757;
+    border-radius: 5px;
+}
+
+.products-section {
+    padding: 20px;
+    background-color: #fff;
+    margin: 20px auto;
+    max-width: 1000px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.products-title {
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+
+.search-form {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.search-form input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    width: 80%;
+    max-width: 400px;
+    margin-right: 10px;
+}
+
+.search-form button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.product {
+    background-color: #fff;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 30%;
+    box-sizing: border-box;
+}
+
+.product-image {
+    max-width: 100%;
+    height: auto;
+}
+
+.product-title {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.pret {
+    font-size: 18px;
+    color: #888;
+}
+
+.product-description {
+    margin: 10px 0;
+}
+
+.pagination {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.pagination button {
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    font-size: 16px;
+}
+
+.pagination button:hover {
+    background-color: #575757;
+}
+
+
+.add-to-cart-button {
+    background-color: #036017;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.add-to-cart-button:hover {
+    background-color: #218838;
+}
+
+
+/* styles.css */
+
+/* ... (existing styles) ... */
+
+.sort-buttons {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.sort-buttons button {
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    border: none;
+    background-color: #0b6914;
+    color: #fff;
+    font-size: 16px;
+}
+
+.sort-buttons button:hover {
+    background-color: #53b80c;
+}
+
+/* About Us Section */
+
+/* About Us Section */
+.putin-despre {
+    padding: 20px 20px;
+    background-color : #f4f4f4;
+    text-align: center;
+    margin: 40px auto;
+    max-width: 1300px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(251, 142, 142, 0.1);
+}
+
+.putin-despre .features-title {
+    font-size: 36px;
+    color: #000000;
+    margin-bottom: 25px;
+    font-weight: bold;
+}
+.pozeabout img {
+    width: 500px; /* sau dimensiunea dorită în pixeli sau procente */
+    height: auto; /* menține proporțiile imaginilor */
+  }
+  
+
+.putin-despre .feature-description {
+    font-size: 18px;
+    color: #171717;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    padding: 0 20px;
+}
+
+.pozeabout {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+footer{
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+  
+    bottom: 0;
+    width: 100%;
+
+}
+
+/*workout */
+
+.workout-title {
+    font-size: 28px;
+    text-align: center;
+    margin-top: 20px;
+    color: #333;
+}
+
+.workout-summary {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.workout-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px;
+    border-radius: 8px;
+}
+
+.download-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.download-link:hover {
+    background-color: #555;
+}
+
+.workout-description {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.workout-description h2, .workout-description h3 {
+    color: #333;
+}
+
+.workout-description p, .workout-description ul {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Styles for Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table th, table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    background-color: #f4f4f4;
+    color: #333;
+    font-weight: bold;
+}
+
+table tr:hover {
+    background-color: #f1f1f1;
+}
+
+@media (max-width: 768px) {
+    table th, table td {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    table th {
+        background-color: transparent;
+        color: #333;
+        border-bottom: none;
+        font-size: 16px;
+    }
+
+    table td {
+        border-bottom: none;
+        padding: 10px 0;
+    }
+
+    table tr {
+        margin-bottom: 10px;
+        display: block;
+    }
+}
+
+
+
+
+/* styles.css */
+
+/* shopping cart styling */
+.cart-section {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.cart-item-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.cart-item-details {
+    flex-grow: 1;
+    padding: 0 20px;
+}
+
+.remove-button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.cart-total {
+    text-align: right;
+    margin-top: 20px;
+}
+
+.checkout-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+
+/* Stilizare input-uri */
+.search-form input[type="number"],
+.search-form button {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 8px;
+  font-size: 16px;
+}
+
+/* Stilizare buton de submit */
+.search-form button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* Stilizare buton de resetare */
+.drop-filter {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f44336;
+  color: white;
+  cursor: pointer;
+  display: none;
+}
+
+/* Stilizare buton de resetare: la hover */
+.drop-filter:hover {
+  background-color: #d32f2f;
+}

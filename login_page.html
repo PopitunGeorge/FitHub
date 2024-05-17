@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logare</title>
+    <link rel="stylesheet" href="styles2.css">
+    
+</head>
+<body>
+    <header class="header">
+        <img src="folder_imagini/logo_FitHub.jpg" alt="Site Icon" class="header-icon">
+        <h1 class="header-title">Fit Hub</h1>
+    </header>
+    <div class="login-container">
+        <form id="loginForm">
+            <h2>Logare</h2>
+            <div class="input-group">
+                <label for="username">Nume utilizator:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Parolă:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">Logare</button>
+            <div class="cont_deja">
+                <p>Nu ai cont inca? <a href="register_page.html">Inregisreaza-te</a></p>
+            </div>
+        </form>
+    </div>
+    <footer class="footer">
+        <p class="footer-text">&copy; 2024 Fit Hub. All rights reserved.</p>
+    </body>
+</html>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+            const username = formData.get('username');
+            const password = formData.get('password');
+            let users = JSON.parse(localStorage.getItem('users')) || [];
+            let user = users.find(u => u.username === username && u.password === password);
+            if (user) {
+                alert('Autentificare reușită!');
+                window.location.href = 'home_page.html';
+            } else {
+                alert('Nume utilizator sau parolă incorectă');
+            }
+        });
+    </script>

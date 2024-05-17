@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="folder_imagini/logo_FitHub.jpg" type="image/x-icon">
+    <title>Account Details - Fit Hub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <img src="folder_imagini/logo_FitHub.jpg" alt="Site Icon" class="header-icon">
+        <h1 class="header-title">Fit Hub - Account Details</h1>
+        <nav class="nav">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="home_page.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="produse.html" class="nav-link">Healthy Products</a></li>
+                <li class="nav-item"><a href="Workout_pans.html" class="nav-link">Workout Plans</a></li>
+                <li class="nav-item"><a href="Workout_pans.html" class="nav-link">Fitness Equipment</a></li>
+                <li class="nav-item"><a href="shopping_cart.html" class="nav-link">Shopping Cart</a></li>
+                <li class="nav-item">
+                    <a href="acount.html" class="nav-link">Account</a>
+                    <ul class="submenu">
+                        <li><a href="register_page.html">Inregistrare</a></li>
+                        <li><a href="login_page.html">Logare</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <section class="profile-section">
+        <div class="curent_profile">
+        <img src="folder_imagini/person_icon.png" alt="User Icon" class="user-icon">
+        <h2 id="welcome-message" class="profile-title">Welcome</h2>
+        <button class="cta-button2">Previous Orders</button>
+        <button class="cta-button3">Log Out</button>
+        <button class ="cta-button3">Delete Account</button>
+        </div>
+        <div class="form-container">
+            <form class="account-details-form">
+                <fieldset class="personal-details">
+                    <legend>Personal Details</legend>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="surname">Surname:</label>
+                    <input type="text" id="surname" name="surname" required>
+
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" name="address" required>
+
+                    <label for="postal-code">Postal Code:</label>
+                    <input type="text" id="postal-code" name="postal-code" required>
+
+                    <label for="city">City:</label>
+                    <input type="text" id="city" name="city" required>
+
+                    <label for="telephone">Telephone:</label>
+                    <input type="tel" id="telephone" name="telephone" required>
+                </fieldset>
+                <button type="submit" class="cta-button" onclick="updateDetails()">Update Details</button>
+                </form>
+        </div>
+            <div class="form-container">
+                <fieldset class="company-details">
+                    <legend>Company Details (Optional)</legend>
+                    <label for="company-name">Company Name:</label>
+                    <input type="text" id="company-name" name="company-name">
+
+                    <label for="company-pin">Company PIN:</label>
+                    <input type="text" id="company-pin" name="company-pin">
+
+                    <label for="company-address">Company Address:</label>
+                    <input type="text" id="company-address" name="company-address">
+                </fieldset>
+                <button type="submit" class="cta-button">Update Details</button>
+            </form>
+        </div>
+    </section>
+    <footer class="footer">
+        <p class="footer-text">&copy; 2024 Fit Hub. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const nameInput = document.getElementById('name');
+        const surnameInput = document.getElementById('surname');
+        const addressInput = document.getElementById('address');
+        const postalCodeInput = document.getElementById('postal-code');
+        const cityInput = document.getElementById('city');
+        const telephoneInput = document.getElementById('telephone');
+        const companyNameInput = document.getElementById('company-name');
+        const companyPinInput = document.getElementById('company-pin');
+        const companyAddressInput = document.getElementById('company-address');
+        const welcomeMessage = document.getElementById('welcome-message');
+
+        const user = JSON.parse(localStorage.getItem('user'));
+
+        nameInput.value = user.name;
+        surnameInput.value = user.surname;
+        addressInput.value = user.address;
+        postalCodeInput.value = user.postalCode;
+        cityInput.value = user.city;
+        telephoneInput.value = user.telephone;
+        companyNameInput.value = user.companyName;
+        companyPinInput.value = user.companyPin;
+        companyAddressInput.value = user.companyAddress;
+
+        welcomeMessage.textContent = `Welcome, ${user.name}!`;
+    });
+
+    function updateDetails() {
+        const nameInput = document.getElementById('name');
+        const surnameInput = document.getElementById('surname');
+        const addressInput = document.getElementById('address');
+        const postalCodeInput = document.getElementById('postal-code');
+        const cityInput = document.getElementById('city');
+        const telephoneInput = document.getElementById('telephone');
+        const companyNameInput = document.getElementById('company-name');
+        const companyPinInput = document.getElementById('company-pin');
+        const companyAddressInput = document.getElementById('company-address');
+
+        const user = JSON.parse(localStorage.getItem('user'));
+
+        user.name = nameInput.value;
+        user.surname = surnameInput.value;
+        user.address = addressInput.value;
+        user.postalCode = postalCodeInput.value;
+        user.city = cityInput.value;
+        user.telephone = telephoneInput.value;
+        user.companyName = companyNameInput.value;
+        user.companyPin = companyPinInput.value;
+        user.companyAddress = companyAddressInput.value;
+
+        localStorage.setItem('user', JSON.stringify(user));
+    }
+    //functia care afiseaza numele utilizatorului
+    function showName() {
+        const user = JSON.parse(localStorage.getItem('user'));
+        const welcomeMessage = document.getElementById('welcome-message');
+        welcomeMessage.textContent = `Welcome, ${user.name}!`;
+    }
+
+
+</script>

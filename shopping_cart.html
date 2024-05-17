@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fit Hub - Shopping Cart</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <a href="home_page.html"><img src="folder_imagini/logo_FitHub.jpg" alt="Site Icon" class="header-icon"></a>
+        <h1 class="header-title">Fit Hub</h1>
+        <nav class="nav">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="home_page.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="produse.html" class="nav-link">Healthy Products</a></li>
+                <li class="nav-item"><a href="Workout_pans.html" class="nav-link">Workout Plans</a></li>
+                <li class="nav-item"><a href="fitness_equipment.html" class="nav-link">Fitness Equipment</a></li>
+                <li class="nav-item"><a href="shopping_cart.html" class="nav-link">Shopping Cart</a></li>
+                <li class="nav-item">
+                    <a href="acount.html" class="nav-link">Account</a>
+                    <ul class="submenu">
+                        <li><a href="register_page.html">Register</a></li>
+                        <li><a href="login_page.html">Login</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <section class="cart-section">
+        <h2 class="cart-title">Shopping Cart</h2>
+        <div class="cart-container" id="cart-container">
+            <!-- Cart items will be dynamically inserted here -->
+        </div>
+        <div class="cart-total">
+            <h3>Total: <span id="cart-total">0</span> ron</h3>
+        </div>
+        <button id="checkout-button" class="checkout-button" onclick="checkout()">Checkout</button>
+    </section>
+    <script src="scripts.js"></script>
+</body>
+</html>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const cartContainer = document.getElementById('cart-container');
+        const cartTotal = document.getElementById('cart-total');
+        const checkoutButton = document.getElementById('checkout-button');
+
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        cart.forEach(product => {
+            const cartItem = document.createElement('div');
+            cartItem.classList.add('cart-item');
+            cartItem.innerHTML = `
+                <img src="${product.image}" alt="${product.name}" class="cart-item-image">
+                <div class="cart-item-details">
+                    <h3>${product.name}</h3>
+                    <p>Price: ${product.price} ron</p>
+                    <p>Quantity: ${product.quantity}</p>
+                </div>
+                <button class="remove-button" onclick="removeFromCart(${product.id})">Remove</button>
+            `;
+            cartContainer.appendChild(cartItem);
+        });
+
+        const total = cart.reduce((acc, product) => acc + product.price * product.quantity, 0);
+        cartTotal.textContent = total;
+
+        if (cart.length === 0) {
+            checkoutButton.disabled = true;
+        }
+    });
+
+    function removeFromCart(productId) {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cart = cart.filter(product => product.id !== productId);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        location.reload();
+    }
+
+    function checkout() {
+        alert('Thank you for your purchase!');
+        localStorage.removeItem('cart');
+        location.reload();
+    }
+
+</script>

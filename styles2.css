@@ -1,0 +1,192 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('folder_imagini/background_logare.jpg'); /* Aici poți pune calea către imaginea ta de fundal */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.login-container {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 350px;
+}
+
+.input-group {
+    margin-bottom: 10px;
+    width: 94%;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.header {
+    background-color: #333;
+    color: #fff;
+    padding: 1px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed; /* Fixează header-ul pe ecran */
+    top: 0; /* Poziționează header-ul în partea de sus a ecranului */
+    width: 100%; /* Asigură că header-ul se extinde pe toată lățimea ecranului */
+    z-index: 1000; /* Asigură că header-ul este întotdeauna deasupra celorlalte elemente */
+}
+
+
+
+.nav-list {
+    list-style-type: none;
+}
+
+.nav-item {
+    display: inline;
+    margin-right: 20px;
+}
+
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #ff9900; 
+}
+
+.hero-section {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f4f4f4;
+}
+.header-icon {
+    border-radius: 200px; /* Rotunjirea colțurilor pictogramei */
+    height: 50px; /* Setează înălțimea pictogramei */
+    width: 50px; /* Setează lățimea pictogramei */
+    /*margin-right: 10px; /* Adaugă un spațiu între pictogramă și titlu */
+    background-color: #fff; /* Setează culoarea de fundal a pictogramei */
+    color: #333; /* Setează culoarea textului din pictogramă */
+    display: flex; /* Permite alinierea textului în centrul pictogramei */
+    justify-content: center; /* Alignează textul în centrul pictogramei */
+    align-items: center; /* Alignează textul în centrul pictogramei */
+    margin-left: 10px;
+    margin-right: 10px;
+
+}
+.nav-item {
+    position: relative; /* Permite poziționarea absolută a submeniului în raport cu acest element */
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    left: 0; /* Aliniază submeniul la stânga elementului părinte */
+    background-color: #333;
+    padding: 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.submenu a {
+    color: orange;
+    text-decoration: none;
+}
+
+.submenu a:hover {
+    color: #ff9900;
+}
+
+.nav-item:hover .submenu {
+    display: block;
+}
+
+.cont_deja {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    
+}
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+    position: fixed; /* Fixează footer-ul pe ecran */
+    bottom: 0; /* Poziționează footer-ul în partea de jos a ecranului */
+    width: 100%;
+}
+
+/* styles2.css */
+
+.register-container {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.register-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
